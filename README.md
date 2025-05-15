@@ -1,6 +1,10 @@
-Tasks for do:
-1. Write validation logic DONE
-2. ajax form  note:now write axios ajax logic and enable middlewares DONE
-3. use facades for email and send Letter
-4. Rewrite .env.example file 
-4. Check and purge useless
+1. Create .env
+2. Insert it in .env[
+Generate artisan key
+Create db and role and give permissions (or don't lara anyways create sqlite .db)
+SMTP information
+]
+3. php artisan migrate
+4. php artisan serve
+
+url: localhost:8000/testform

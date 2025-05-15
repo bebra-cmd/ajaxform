@@ -32,7 +32,7 @@ class Handler extends ExceptionHandler
         if ($e instanceof ValidationException){
             return Response::json(['message'=>'Validation exception','errors'=>$e->errors(),],422); //or just $e->errors in reponse, this look weird
         }
-        return parent::render($request,$e);
+        return parent::render($request,$e); 
     }
     
 }
