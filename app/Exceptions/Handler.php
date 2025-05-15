@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
     }
     public function render($request, Throwable $e){
         if ($e instanceof ValidationException){
-            return Response::json(['message'=>'Validation exception','errors'=>$e->errors(),],422);
+            return Response::json(['message'=>'Validation exception','errors'=>$e->errors(),],422); //or just $e->errors in reponse, this look weird
         }
     }
     

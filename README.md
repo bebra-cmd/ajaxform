@@ -1,6 +1,6 @@
 Tasks for do:
-1. Write Validation rules in Requests note:Make exception handlers for ajax form if backend validation rules fails
-2. Use email facades to send letter
-3. Do not forget about ajax form
+1. Write validation logic DONE
+2. ajax form  note:now write axios ajax logic and enable middlewares
+3. use facades for email and send Letter
 4. Rewrite .env file 
-4. Purge useless features
+4. Check and purge useless
