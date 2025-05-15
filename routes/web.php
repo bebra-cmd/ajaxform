@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/testform', function () {
     return view('ajaxform');
 });
-Route::withoutMiddleware()->post('/testform',[UserInfoController::class,'writeData']); //temp
+Route::post('/testform',[UserInfoController::class,'writeData']);

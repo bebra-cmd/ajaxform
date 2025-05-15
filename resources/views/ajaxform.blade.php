@@ -1,3 +1,5 @@
+<html>
+<body>
 <div>
     <meta name="csrf" content="{{ csrf_token() }}">
     <form id="ajaxForm">
@@ -6,7 +8,11 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
         <label for="phone_number">Phone number:</label>
-        <input type="tel" id="phone_number" name="number">
+        <input type="tel" id="number" name="number"> 
         <button type="submit">Submit</button>
     </form>
 </div>
+<script src="{{ asset('js/axios.min.js')}}"></script>
+<script src="{{ asset('js/logic.js')}}"></script>
+</body>
+</html>
