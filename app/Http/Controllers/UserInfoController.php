@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use App\Http\Requests\UserInfoFormRequest;
 use App\Models\UserInfoModel;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Mail;
+use App\Jobs\SendEmail;
 class UserInfoController extends BaseController
 {
     public function writeData(UserInfoFormRequest $request){
@@ -16,13 +16,10 @@ class UserInfoController extends BaseController
         $psql->name=$validated['name'];
         $psql->email=$validated['email'];
         $psql->number=$validated['number'];
-        
         $letter=$psql->name.' '.$psql->email.' '.$psql->number.PHP_EOL;
-        Mail::raw($letter,function($message){
-            $message->to(env("MAIL_ADMIN_RECEIVER"));
-            $message->subject('New user');
-        });
+        SendEmail::dispatch($letter);
         $psql->save();
         return Response::json(['message'=>'OK']);
+        
     }
 }
